@@ -85,21 +85,9 @@ namespace PruebaTecnica
 
                     string sqltext = "INSERT INTO novedadesnomina(idcontrato, periodolaborado, horaslaboradas, horaextradiurna, horaextranocturna, horaextradominical, horaextrafestiva, descuentos, usuariocreacion) ";
                     sqltext += "VALUES(@idcontrato,@periodo,@horalaborada,@HEdiuerna,@HEnocturna,@HEdominical,@HEfestiva,@descuento,@usuario)";
-
-                    cmd.CommandText = sqltext;
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.Add(new NpgsqlParameter("@idcontrato", Convert.ToInt32(txtcontrato.Text)));
-                    cmd.Parameters.Add(new NpgsqlParameter("@periodo", Convert.ToInt32(txtperiodolaborado.Text)));
-                    cmd.Parameters.Add(new NpgsqlParameter("@horalaborada", Convert.ToInt32(txthoralaborada.Text)));
-                    cmd.Parameters.Add(new NpgsqlParameter("@HEdiuerna", Convert.ToInt32(txtdiurnas.Text)));
-                    cmd.Parameters.Add(new NpgsqlParameter("@HEnocturna", Convert.ToInt32(txtNocturnas.Text)));
-                    cmd.Parameters.Add(new NpgsqlParameter("@HEdominical", Convert.ToInt32(txtdominicales.Text)));
-                    cmd.Parameters.Add(new NpgsqlParameter("@HEfestiva", Convert.ToInt32(txtfestivas.Text)));
-                    cmd.Parameters.Add(new NpgsqlParameter("@descuento", Convert.ToInt32(txtdescuentos.Text)));
-                    cmd.Parameters.Add(new NpgsqlParameter("@usuario", "desde la web"));
+                    
 
                     cmd.ExecuteNonQuery();
-                    cmd.Dispose();
                     connection.Close();
 
                     limpiarNovedades();
