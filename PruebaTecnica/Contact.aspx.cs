@@ -72,7 +72,7 @@ namespace PruebaTecnica
             }
         }
 
-        protected void btnGuardarData_Click(object sender, EventArgs e)
+        protected void btnGuardarData_Click(object sender, EventArgs e)  
         {
             try /* Updation After Validations*/
             {
